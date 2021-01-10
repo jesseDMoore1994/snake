@@ -6,11 +6,11 @@ NAME = $(shell cat package.json | jq .name -r)
 	touch $@
 
 game/game.js: .build_docker
-	docker run -it --rm -v $(shell pwd):/app $(NAME)_build:$(VERSION)
+	docker run -it --rm -v $(shell pwd):/app -u $(shell id -u):$(shell id -g) $(NAME)_build:$(VERSION)
 
 .PHONY: deploy
 deploy: game/game.js
-	docker run -d -v $(shell pwd):/var/www:ro -p 8080:8080 trinitronx/python-simplehttpserver
+	docker run -d -v $(shell pwd):/var/www:ro -u $(shell id -u):$(shell id -g) -p 8080:8080 trinitronx/python-simplehttpserver
 
 .PHONY: clean
 clean:

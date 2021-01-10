@@ -18,10 +18,6 @@ var game = new ex.Engine({
 });
 
 function getRandomColor(): ex.Color {
-    //let r: number = Math.floor(Math.random() * 256);
-    //let g: number = Math.floor(Math.random() * 256);
-    //let b: number = Math.floor(Math.random() * 256);
-    // return ex.Color.fromRGB(r, g, b);
     let palette: ex.Color[] = [
         ex.Color.fromRGB(143, 0, 242),
         ex.Color.fromRGB(0, 207, 251),
@@ -39,7 +35,6 @@ class Fruit extends ex.Actor {
         this.body.collider.type = ex.CollisionType.Active;
         this._move()
         this.on('collisionstart', (evt: ex.CollisionStartEvent) => {
-            console.log('Fruit collision detected')
             if (!(evt.other instanceof Fruit)) {
                 this._move();
             }

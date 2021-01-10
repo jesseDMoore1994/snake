@@ -1,8 +1,8 @@
 /// <reference path="../node_modules/excalibur/dist/excalibur.d.ts" />
 
-var cell_size = 25;
-var board_width = 800;
-var board_height = 600;
+var cell_size = 37.5;
+var board_width = 1200;
+var board_height = 900;
 
 enum Direction {
     Up,

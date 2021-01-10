@@ -1,9 +1,9 @@
 {
-    "name": "mygame",
+    "name": "snake",
     "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
-        "start": "./node_modules/.bin/tsc -p game/tsconfig.json"
+        "build": "./node_modules/.bin/tsc -p game/tsconfig.json"
     },
     "dependencies": {
         "excalibur": "latest"
